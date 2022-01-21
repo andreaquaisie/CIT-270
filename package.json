@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "express": "^4.17.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "hello": "node helloworld.js"
+  },
+  "name": "cit-270",
+  "version": "1.0.0",
+  "main": "helloworld.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreaquaisie/CIT-270.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreaquaisie/CIT-270/issues"
+  },
+  "homepage": "https://github.com/andreaquaisie/CIT-270#readme",
+  "description": ""
 }

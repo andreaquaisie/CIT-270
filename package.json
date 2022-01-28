@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "body-parser": "^1.19.1",
     "express": "^4.17.2"
   },
   "scripts": {
@@ -9,7 +10,6 @@
   "name": "cit-270",
   "version": "1.0.0",
   "main": "helloworld.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andreaquaisie/CIT-270.git"

@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const md5 = require('md5');
 const port = 3000;
 const app = express();
+const fs = require('fs')
+const https = require('https')
 
 app.use(bodyParser.json());
 app.get('/', (req,res)=>{
@@ -17,6 +19,13 @@ app.post('/login',(req,res) => {
     else{
         res.send("Who are you?")
     }
-});
+})
 
-app.listen(port, ()=>{});
+//app.listen(port, ()=>{});
+
+https.createServer({
+    key: fs.readFileSync('server.key'),
+    cert: fs.readFileSync('server.cert')
+  }, app).listen(3000, () => {
+    console.log('Listening...')
+  });

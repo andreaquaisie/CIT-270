@@ -6,6 +6,7 @@ const app = express();
 const fs = require('fs')
 const https = require('https')
 
+app.use(express.static('public'));
 app.use(bodyParser.json());
 app.get('/', (req,res)=>{
     res.send("Hello browser");

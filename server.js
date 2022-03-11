@@ -14,7 +14,7 @@ app.get('/', (req,res)=>{
 
 app.post('/login',(req,res) => {
     console.log(JSON.stringify(req.body));
-    if (req.body.userName =="aquaisie" && md5(req.body.password) =="1c42f9c1ca2f65441465b43cd9339d6c"){
+    if (req.body.userName =="aquaisie" && md5(req.body.password) =="10f6c2a880d21c337f52fdc71581029a"){
         res.send("Welcome!")
     }
     else{

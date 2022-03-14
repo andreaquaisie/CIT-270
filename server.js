@@ -6,6 +6,8 @@ const app = express();
 const fs = require('fs')
 const https = require('https')
 
+let invalidloginAttemps = 0;
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.get('/', (req,res)=>{
@@ -14,10 +16,16 @@ app.get('/', (req,res)=>{
 
 app.post('/login',(req,res) => {
     console.log(JSON.stringify(req.body));
-    if (req.body.userName =="aquaisie" && md5(req.body.password) =="10f6c2a880d21c337f52fdc71581029a"){
+    if(invalidloginAttemps>=5) {
+        res.status(401); 
+    }
+    else if (req.body.userName =="aquaisie" && md5(req.body.password) =="10f6c2a880d21c337f52fdc71581029a"){
         res.send("Welcome!")
     }
     else{
+        invalidloginAttemps++;
+        console.log(invalidloginAttemps+" invalid attemps");
+        res.status(401); //unauthorized
         res.send("Who are you?")
     }
 })
